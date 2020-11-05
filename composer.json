@@ -1,4 +1,5 @@
 {
+    "name": "shuuuta/TemperatureMap",
     "scripts": {
         "test": "phpunit"
     },
