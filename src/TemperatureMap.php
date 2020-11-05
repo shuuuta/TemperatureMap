@@ -1,6 +1,8 @@
 <?php
 namespace TemperatureMap;
 
+use RuntimeException;
+
 class TemperatureMap
 {
   protected $image;
@@ -20,8 +22,8 @@ class TemperatureMap
   protected function setImage(string $path): bool
   {
     $image = @imagecreatefrompng($path);
-    if (!is_resource($image)) {
-      return false;
+    if (!$image || !is_resource($image)) {
+      throw new RuntimeException('Map image can not be  acquired.');
     }
 
     //need check image
